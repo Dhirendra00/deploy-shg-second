@@ -47,82 +47,103 @@ export const Details = ({
       <div className="grid grid-cols-12 gap-4 divide-x-2 divide-dashed">
         <div className="col-start-1 col-end-10  p-3">
           <div className="flex">
-            <div className="w-60 shadow-E500 ml-3 bg-white rounded-3xl p-4 ">
-              <h1 className="text-xl   text-dark">Heart Rate</h1>
-              <h2 className="text-3xl mt-2 font-bold text-dark">
+            <div className="w-60 shadow-E500 ml-3 primaryBgColor rounded-3xl p-7 ">
+              <h1 className="text-xl   text-white">Heart Rate</h1>
+              <h2 className="text-3xl mt-2 font-bold text-white">
                 {respiratoryRate}
               </h2>
-              {/* <Image
-                src="/heartrate.jpeg"
+              <Image src="/heartrate.png" alt="Avatar" width={70} height={50} />
+            </div>
+            <div className="w-60  flex shadow-E500 ml-7 bg-white rounded-3xl p-4 ">
+              {/* <h1 className="text-xl   primaryTextColor">Temperature</h1> */}
+              <h2 className="text-3xl mt-8 mr-3 font-bold primaryTextColor">
+                {temperature}°C
+              </h2>
+
+              <Image
+                src="/thermometer.png"
                 alt="Avatar"
-                width={70}
-                height={50}
-              /> */}
+                width={80}
+                height={100}
+              />
             </div>
-            <div className="w-60 shadow-E500 ml-7 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-3xl p-4 ">
-              <h1 className="text-xl   text-white">Temperature</h1>
-              <h2 className="text-3xl mt-2 font-bold text-white">
-                {temperature}
-              </h2>
-            </div>
-            <div className="w-60 shadow-E500 ml-7 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-3xl p-4 ">
-              <h1 className="text-xl   text-white"> Blood Pressure Systolic</h1>
-              <h2 className="text-3xl mt-2 font-bold text-white">
+            <div className="w-60 flex shadow-E500 ml-7 bg-white rounded-3xl p-4 ">
+              <h2 className="text-3xl mt-8 mr-3 font-bold primaryTextColor">
                 {bpSystolic}/{bpDiastolic}
+                <br></br>
+                mmHg
               </h2>
+
+              <Image src="/systolic.png" alt="Avatar" width={80} height={100} />
             </div>
 
             {/* <div className="flex-col">
-              <div className="w-60 shadow-E500 ml-7 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-3xl p-4 ">
-                <h1 className="text-xl   text-white">
+              <div className="w-60 shadow-E500 ml-7 bg-white rounded-3xl p-4 ">
+                <h1 className="text-xl   primaryTextColor">
                   Blood Pressure Systolic
                 </h1>
-                <h2 className="text-3xl mt-2 font-bold text-white">
+                <h2 className="text-3xl mt-2 font-bold primaryTextColor">
                   {bpSystolic}/{bpDiastolic}
                 </h2>
               </div>
              
             </div> */}
 
-            <div className="w-60 shadow-E500 ml-7 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-3xl p-4 ">
-              <h1 className="text-xl   text-white">SPO2</h1>
-              <h2 className="text-3xl mt-2 font-bold text-white">{spo}</h2>
+            <div className="w-60 flex shadow-E500 ml-7 bg-white rounded-3xl p-4 ">
+              <h2 className="text-3xl mt-2 font-bold primaryTextColor">
+                {spo}
+              </h2>
+              <Image src="/pulse.png" alt="Avatar" width={80} height={100} />
             </div>
           </div>
           <div className="flex mt-4">
-            <div className="w-4/6 h-96 shadow-E500 ml-3  bg-gradient-to-r from-sky-500 to-indigo-500 rounded-3xl p-4 ">
-              <h1 className="text-xl   text-white">Pulse</h1>
-              <h2 className="text-3xl mt-2 font-bold text-white">{pulse}</h2>
+            <div className="w-4/6 h-96 shadow-E500 ml-3 pt-9 bg-white rounded-3xl p-4 ">
+              <h2 className="text-right text-5xl mr-9 mt-9 font-bold primaryTextColor">
+                {pulse}
+              </h2>
+              <Image src="/pulse.png" alt="Avatar" width={500} height={100} />
             </div>
             {/* medical history */}
-            <div className="w-2/6 shadow-E500 ml-3 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-3xl p-4 ">
-              <h1 className="text-xl font-semibold text-white text-center">
+            <div className="w-2/6 shadow-E500 ml-3 bg-white rounded-3xl p-4 ">
+              <h1 className="text-xl font-semibold primaryTextColor text-center">
                 Medical history
               </h1>
               <hr></hr>
-              <h2 className="text-3xl mt-2 pt-3 font-bold text-white ">
+              <h2 className="text-3xl mt-2 pt-3 font-bold primaryTextColor ">
                 {medicalHistory}
               </h2>
               <hr></hr>
-              <h2 className="text-3xl mt-2 font-bold text-white">
+              <h2 className="text-3xl mt-2 font-bold primaryTextColor">
                 {surgicalHistory}
               </h2>
               <hr></hr>
-              <h2 className="text-3xl mt-2 font-bold text-white">{gyeObs}</h2>
+              <h2 className="text-3xl mt-2 font-bold primaryTextColor mb-3">
+                {gyeObs}
+              </h2>
+              <span className=" flex place-content-center">
+                <Image
+                  src="/medical.png"
+                  alt="Avatar"
+                  width={100}
+                  height={100}
+                />
+              </span>
             </div>
             {/* medical history */}
           </div>
           {/* physical examination and chief complaints */}
           <div className="flex mt-5">
-            <div className="w-3/6 shadow-E500 ml-3 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-3xl p-4 ">
-              <h1 className="text-xl   text-white">Physical Examination</h1>
-              <h2 className="text-3xl mt-2 font-bold text-white">
+            <div className="w-3/6 shadow-E500 ml-3 bg-white rounded-3xl p-4 ">
+              <h1 className="text-xl   primaryTextColor">
+                Physical Examination
+              </h1>
+              <h2 className="text-3xl mt-2 font-bold primaryTextColor">
                 {respiratoryRate}
               </h2>
             </div>
-            <div className="w-3/6 shadow-E500 ml-7 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-3xl p-4 ">
-              <h1 className="text-xl   text-white">Chief Complaints</h1>
-              <h2 className="text-3xl mt-2 font-bold text-white">
+            <div className="w-3/6 shadow-E500 ml-7 bg-white rounded-3xl p-4 ">
+              <h1 className="text-xl   primaryTextColor">Chief Complaints</h1>
+              <h2 className="text-3xl mt-2 font-bold primaryTextColor">
                 {temperature}
               </h2>
             </div>
@@ -131,12 +152,12 @@ export const Details = ({
         </div>
         <div className="col-start-10 col-end-13">
           {/* user profile */}
-          <div className="w-6/6 shadow-E500 ml-3 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-3xl p-4 ">
+          <div className="w-6/6 shadow-E500 ml-3 bg-white rounded-3xl p-4 ">
             <div className="flex justify-between">
-              <h1 className="text-xl font-semibold text-white text-center">
+              <h1 className="text-xl font-semibold primaryTextColor text-center">
                 {name}
               </h1>
-              <button className="bg-red-600 text-white ml-4 mb-1 py-1 px-3 text-base mr-2 rounded-sm">
+              <button className="bg-red-600 primaryTextColor ml-4 mb-1 py-1 px-3 text-base mr-2 rounded-sm">
                 <Link
                   href={`/doctor/videocall?patientId=${patient_id}`}
                   passHref
@@ -161,27 +182,29 @@ export const Details = ({
                 </h2>
               </div>
               <div className="flex flex-col flex-start space-x-1">
-                <h2 className="text-xl mt-1 text-white uppercase">
+                <h2 className="text-xl mt-1 primaryTextColor uppercase">
                   Patient ID: {patient_id}
                 </h2>
-                <h2 className="text-xl mt-1 text-white uppercase">
+                <h2 className="text-xl mt-1 primaryTextColor uppercase">
                   Gender: {gender}
                 </h2>
-                <h2 className="text-xl mt-1 text-white uppercase">
+                <h2 className="text-xl mt-1 primaryTextColor uppercase">
                   Age: {age}
                 </h2>
-                <h2 className="text-xl mt-1 text-white uppercase">
+                <h2 className="text-xl mt-1 primaryTextColor uppercase">
                   Caste: {caste}
                 </h2>
-                <h2 className="text-xl mt-1 text-white uppercase">
+                <h2 className="text-xl mt-1 primaryTextColor uppercase">
                   District: {district}
                 </h2>
                 <div className="flex">
-                  <h2 className="text-xl mt-2 text-white uppercase">Visit: </h2>
+                  <h2 className="text-xl mt-2 primaryTextColor uppercase">
+                    Visit:{" "}
+                  </h2>
                   <Listbox value={selected} onChange={setSelected}>
                     <div className="relative ml-3 mt-1  w-full">
-                      <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-                        <span className="block text-white truncate backdrop-opacity-10 ">
+                      <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left primaryTextColor bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+                        <span className="block primaryTextColor truncate backdrop-opacity-10 ">
                           {selected.date}
                         </span>
                         <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
@@ -249,8 +272,8 @@ export const Details = ({
           </div>
           {/* user profile */}
           {/* Refered Test */}
-          <div className="w-6/6 shadow-E500 mt-5 ml-3 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-3xl p-4 ">
-            <h1 className="text-xl font-semibold text-white text-center">
+          <div className="w-6/6 shadow-E500 mt-5 ml-3 bg-white rounded-3xl p-4 ">
+            <h1 className="text-xl font-semibold primaryTextColor text-center">
               Refered Test
             </h1>
             <hr></hr>
@@ -261,7 +284,7 @@ export const Details = ({
               <button
                 type="button"
                 onClick={openModal}
-                className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+                className="px-4 py-2 text-sm font-medium primaryTextColor bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
               >
                 ECG TEST
               </button>
@@ -338,12 +361,12 @@ export const Details = ({
 // export const MedicalHistory = ({medicalHistory,surgicalHistory,gyeObs}) => {
 //    return (
 //       <>
-//        <div className="w-2/6 shadow-E500 ml-3 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-3xl p-4 ">
-//                <h1 className="text-xl font-semibold text-white text-center">Medical history</h1>
+//        <div className="w-2/6 shadow-E500 ml-3 bg-white rounded-3xl p-4 ">
+//                <h1 className="text-xl font-semibold primaryTextColor text-center">Medical history</h1>
 //                <hr></hr>
-//                <h2 className="text-3xl mt-2 font-bold text-white">{medicalHistory }</h2>
-//                <h2 className="text-3xl mt-2 font-bold text-white">{surgicalHistory }</h2>
-//                <h2 className="text-3xl mt-2 font-bold text-white">{gyeObs }</h2>
+//                <h2 className="text-3xl mt-2 font-bold primaryTextColor">{medicalHistory }</h2>
+//                <h2 className="text-3xl mt-2 font-bold primaryTextColor">{surgicalHistory }</h2>
+//                <h2 className="text-3xl mt-2 font-bold primaryTextColor">{gyeObs }</h2>
 //             </div>
 //       </>
 //    )
@@ -351,9 +374,9 @@ export const Details = ({
 // export const ChiefComplaint = ({ }) => {
 //    return (
 //       <>
-//        <div className="w-3/6 shadow-E500 ml-7 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-3xl p-4 ">
-//                <h1 className="text-xl   text-white">Chief Complaints</h1>
-//                <h2 className="text-3xl mt-2 font-bold text-white">{ }</h2>
+//        <div className="w-3/6 shadow-E500 ml-7 bg-white rounded-3xl p-4 ">
+//                <h1 className="text-xl   primaryTextColor">Chief Complaints</h1>
+//                <h2 className="text-3xl mt-2 font-bold primaryTextColor">{ }</h2>
 //             </div>
 //       </>
 //    )
@@ -362,9 +385,9 @@ export const Details = ({
 // export const PhysicalExamination = ({ }) => {
 //    return (
 //       <>
-//        <div className="w-3/6 shadow-E500 ml-7 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-3xl p-4 ">
-//                <h1 className="text-xl   text-white">Physical Examination</h1>
-//                <h2 className="text-3xl mt-2 font-bold text-white">{ }</h2>
+//        <div className="w-3/6 shadow-E500 ml-7 bg-white rounded-3xl p-4 ">
+//                <h1 className="text-xl   primaryTextColor">Physical Examination</h1>
+//                <h2 className="text-3xl mt-2 font-bold primaryTextColor">{ }</h2>
 //             </div>
 //       </>
 //    )
