@@ -30,8 +30,7 @@ const PatientDetailTab = () => {
 
   useEffect(() => {
     fetchSinglePatient(id).then((data) => {
-      console.log(data);
-      setPatient(data.data);
+      setPatient(data.data.data);
       setLoading(false);
     });
   }, [id]);
@@ -57,15 +56,18 @@ const PatientDetailTab = () => {
           caste={patient && patient.caste}
           district={patient && patient.district}
           service={patient && patient.service}
-          temperature={patient && patient.vitals.temperature}
-          pulse={patient && patient.vitals.pulse}
-          respiratoryRate={patient && patient.vitals.respiratory_rate}
-          bpSystolic={patient && patient.vitals.bp_systolic}
-          bpDiastolic={patient && patient.vitals.bp_diastolic}
-          spo={patient && patient.vitals.spo_2}
-          medicalHistory={patient && patient.history.medical_history}
-          surgicalHistory={patient && patient.history.surgical_history}
-          gyeObs={patient && patient.history.gye_obs}
+          vitals={patient && patient.vitals}
+          history={patient && patient.history}
+
+          // temperature={patient && patient.vitals.temperature}
+          // pulse={patient && patient.vitals.pulse}
+          // respiratoryRate={patient && patient.vitals.respiratory_rate}
+          // bpSystolic={patient && patient.vitals.bp_systolic}
+          // bpDiastolic={patient && patient.vitals.bp_diastolic}
+          // spo={patient && patient.vitals.spo_2}
+          // medicalHistory={patient && patient.history.medical_history}
+          // surgicalHistory={patient && patient.history.surgical_history}
+          // gyeObs={patient && patient.history.gye_obs}
         ></Details>
       )}
     </>

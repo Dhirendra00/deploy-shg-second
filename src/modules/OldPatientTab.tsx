@@ -136,9 +136,14 @@ export const OldPatientTab = () => {
         </div>
       ) : data.length === 0 ? (
         <div className="pt-12 ml-32 space-y-8 flex flex-col justify-center">
-          {/* <div className="relative w-1/3 h-[30vh]"> */}
-
-          {/* </div> */}
+          <div className="relative w-1/3 h-[30vh]">
+            <Image
+              src="/empty.svg"
+              alt="empty "
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
           <div className="text-blue-500 font-semibold text-xl tracking-wider">
             {error}
           </div>
@@ -150,13 +155,6 @@ export const OldPatientTab = () => {
           className="shadow-E500 rounded-lg overflow-hidden"
         />
       )}
-      <div>
-        <Table
-          columns={columns}
-          dataSource={data}
-          className="shadow-E500 rounded-lg overflow-hidden"
-        />
-      </div>
     </div>
   );
 };

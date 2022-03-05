@@ -20,7 +20,7 @@ const DoctorDashboard: React.FC = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetchAllPatient().then((data: any) => {
-      setPatients(data.data);
+      setPatients(data.data.data);
       setLoading(false);
     });
   }, []);

@@ -427,7 +427,13 @@ const VitalModalContent = () => {
             unit="%"
           />
         </div>
-        <Button>Submit</Button>
+        <Button
+        // onClick={() =>
+        //   router.push(
+        //     `/service/opd/start?name=${router.query.name}&id=${router.query.id}`
+        //   )
+        // }
+        >Submit</Button>
       </Form>
     </Formik>
   );
