@@ -37,9 +37,9 @@ const LoginForm = () => {
       }}
       initialValues={{ email: "", password: "" }}
     >
-      <Form className="space-y-6">
+      <Form className="space-y-6 sm:py-5">
         <div className="space-y-4">
-          <Field name="email" component={Input} placeholder="Enter Email" />
+          <Field  name="email" component={Input} placeholder="Enter Email" />
           <Field
             name="password"
             type="password"
