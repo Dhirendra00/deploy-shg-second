@@ -1,5 +1,6 @@
 import { useAuthStore } from "@/modules/auth/useAuthStore";
 import Image from "next/image";
+
 // eslint-disable-next-line camelcase
 import jwt_decode from "jwt-decode";
 import {
@@ -16,6 +17,7 @@ import { SignOut } from "phosphor-react";
 import Link from "next/link";
 import { alert } from "@/components/Alert";
 import { onLogout } from "@/services/promises/authPromise";
+import React, { useState } from "react";
 
 type MainLayoutProps = {
   children: React.ReactNode;
@@ -24,6 +26,8 @@ type MainLayoutProps = {
 export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const access = useAuthStore().accessToken;
   const data = access && jwt_decode<any>(access);
+  const [showsidebar, setShowsidebar] = useState("");
+  const [hidesidebar, setHidesidebar] = useState("");
 
   const router = useRouter();
 
@@ -122,10 +126,23 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     });
   };
 
+  const showSidebar = () => {
+    setShowsidebar("showsidebar");
+  };
+  const hideSidebar = () => {
+    setHidesidebar("hidesidebar");
+  };
+
   return (
     <div>
       <div className="flex w-full min-h-screen" suppressHydrationWarning={true}>
-        <div className="fixed w-1/6 bg-white h-screen shadow-E500 z-20 flex items-start py-16 flex-col space-y-12">
+        <div
+          className={`${
+            showsidebar
+              ? "sm:translate-x-0 sm:w-4/6"
+              : "sm:-translate-x-80 sm:absolute"
+          } fixed w-1/6 bg-white h-screen shadow-E500 z-20 flex items-start py-16 flex-col space-y-12 `}
+        >
           <div className="self-center flex flex-col items-center space-y-4">
             <div className="w-32 h-32 relative rounded-full overflow-hidden shadow-E400">
               <Image src="/avatar.png" alt="Avatar" layout="fill" />
@@ -179,11 +196,27 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
             </div>
           </div>
         </div>
-        <div className="w-5/6 ml-[16.67%] bg-gray-50 h-screen">
+
+        <div
+          className="w-5/6 ml-[16.67%] bg-gray-50  sm:ml-0 sm:w-full "
+          onClick={hideSidebar}
+        >
           <div className="w-full bg-white shadow-md pl-5">
-            <Image src="/logo.png" alt="logo" width={250} height={100} />
+            <div className="flex sm:justify-between">
+              <div
+                className="hamburger mt-9 mb-9 rounded pt-3 pb-3 pl-4 pr-4 bg-sky-500/100 cursor-pointer hidden sm:block"
+                onClick={showSidebar}
+              >
+                <div className="line h-0.5 w-6 my-2 bg-white"></div>
+                <div className="line h-0.5 w-6 my-2 bg-white"></div>
+                <div className="line h-0.5 w-6 my-2 bg-white"></div>
+              </div>
+              <div className="logo mr-3">
+                <Image src="/logo.png" alt="logo" width={250} height={100} />
+              </div>
+            </div>
           </div>
-          <div className="px-12 py-12">{children}</div>
+          <div className="px-12 py-12 sm:pl-7 sm:pr-7">{children}</div>
         </div>
       </div>
     </div>

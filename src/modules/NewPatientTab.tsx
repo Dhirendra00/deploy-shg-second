@@ -3,6 +3,7 @@ import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
 import { Field, Form, Formik } from "formik";
 import { Select } from "@/components/Select";
+
 import {
   caste,
   districtData,
@@ -18,7 +19,7 @@ import { alert } from "@/components/Alert";
 export const NewPatientTab = () => {
   const router = useRouter();
   return (
-    <div className="ml-4 w-2/3 py-2 space-y-8">
+    <div className="ml-4 w-2/3 py-2 space-y-8 sm:w-full">
       <div>
         <div className="text-3xl font-medium text-gray-700">
           New Client Registration
@@ -102,7 +103,7 @@ export const NewPatientTab = () => {
           );
 
           return (
-            <Form className="space-y-8 w-5/6">
+            <Form className="space-y-8 w-5/6 sm:w-full">
               <div className="space-y-4">
                 <div className="flex space-x-4">
                   <Field
@@ -144,6 +145,14 @@ export const NewPatientTab = () => {
                   <div className="w-1/4">
                     <Select name="ward" data={wardData} />
                   </div>
+                </div>
+
+                <div className="flex space-x-4">
+                  <Field
+                    name="NHS Number"
+                    component={Input}
+                    placeholder="Enter Your NHS Number (optional)"
+                  />
                 </div>
               </div>
 

@@ -5,13 +5,13 @@ export const LoginPage = () => {
   return (
     <div className="bg-white h-[80vh] shadow-2xl w-full max-w-[90rem] rounded-3xl flex overflow-hidden relative sm:max-w-[30rem]">
       <div className="sm:hidden block">
-      <Image
-        src="/login1.svg"
-        alt="image"
-        layout="fill"
-        className="z-[0]"
-        objectPosition="2rem"
-      />
+        <Image
+          src="/login1.svg"
+          alt="image"
+          layout="fill"
+          className="z-[0]"
+          objectPosition="2rem"
+        />
       </div>
       <div className="w-3/5 flex flex-col justify-center  px-16 space-y-24 z-10 sm:w-full sm:px-4 sm:space-y-5 sm:justify-start sm:py-8">
         <div>

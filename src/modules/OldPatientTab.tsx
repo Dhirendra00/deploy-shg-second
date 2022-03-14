@@ -87,7 +87,7 @@ export const OldPatientTab = () => {
   ];
 
   return (
-    <div className="ml-4 w-2/3 py-2 space-y-8">
+    <div className="ml-4 w-2/3 py-2 space-y-8 sm:w-full">
       <form
         className="flex items-end space-x-4"
         onSubmit={async (e) => {
@@ -105,7 +105,7 @@ export const OldPatientTab = () => {
             });
         }}
       >
-        <div className="w-1/5">
+        <div className="w-1/5 sm:w-full">
           <PrimaryInput
             name="Search Id"
             placeholder="Search By Id"
@@ -116,7 +116,7 @@ export const OldPatientTab = () => {
             required={false}
           />
         </div>
-        <div className="w-1/3">
+        <div className="w-1/3 sm:w-full">
           <PrimaryInput
             name="Search Number"
             required={false}

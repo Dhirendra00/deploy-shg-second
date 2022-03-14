@@ -109,7 +109,7 @@ const PatientPage: NextPage = () => {
                 return (
                   <form>
                     <div className="space-y-4 mb-4">
-                      <div className="flex space-x-5 z-[10]">
+                      <div className="flex space-x-5 z-[10] sm:flex-col">
                         <Select name="service" data={service} />
                         <Select name="province" data={province} />
                         <Select name="district" data={district()} />

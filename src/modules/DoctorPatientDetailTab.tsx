@@ -23,17 +23,19 @@ const DoctorPatientDetailTab = () => {
   const [patient, setPatient] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
+  const [id, setId] = useState<any>();
   const router = useRouter();
-  const id = router.query && router.query.patientId;
-  console.log(id);
 
   useEffect(() => {
-    fetchSinglePatient(id).then((data) => {
-      console.log(data);
-      setPatient(data.data);
-      setLoading(false);
-    });
-  }, [id]);
+    if (router.asPath !== router.route) {
+      console.log(router.query);
+      fetchSinglePatient(router.query.patientId).then((data) => {
+        console.log(data);
+        setPatient(data.data);
+        setLoading(false);
+      });
+    }
+  }, [router]);
 
   const Spinner = () => {
     return (

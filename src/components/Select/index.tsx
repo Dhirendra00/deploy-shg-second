@@ -22,7 +22,7 @@ export const Select: React.FC<SelectProps> = (
 
   return (
     <Fragment>
-      <div className="w-full z-30 text-lg">
+      <div className="w-full z-30  text-lg sm:m-0 ">
         <Listbox value={meta.value} onChange={helpers.setValue}>
           <Listbox.Label className="text-lg font-semibold text-gray-700 capitalize">
             {field.name}
@@ -45,7 +45,7 @@ export const Select: React.FC<SelectProps> = (
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Listbox.Options className="z-50 absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none ">
+              <Listbox.Options className="z-50 absolute w-full   mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none ">
                 {props.data.map((item, itemIdx) => (
                   <Listbox.Option
                     key={itemIdx}

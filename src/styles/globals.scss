@@ -33,7 +33,14 @@ a {
 .secondaryBgColor {
   background-color: #2fa560;
 }
-
+.showSidebar {
+  --tw-translate-x: 80rem;
+  transform: var(--tw-transform);
+}
+.hideSidebar {
+  --tw-translate-x: -20rem;
+  transform: var(--tw-transform);
+}
 // input::-ms-reveal,
 // input::-ms-clear {
 //   display: none;

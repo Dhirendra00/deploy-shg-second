@@ -73,7 +73,7 @@ export const DoctorLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <div suppressHydrationWarning={true}>
       <div className="flex w-full min-h-screen" suppressHydrationWarning={true}>
-        <div className="fixed w-1/6 bg-white h-screen shadow-E500 z-20 flex items-start py-16 flex-col space-y-12">
+        <div className="fixed w-1/6 bg-white h-screen shadow-E500 z-20 flex items-start py-16 flex-col space-y-12 sm:-translate-x-80 sm:absolute">
           <div className="self-center flex flex-col items-center space-y-4">
             <div className="w-32 h-32 relative rounded-full overflow-hidden shadow-E400">
               <Image src="/avatar.png" alt="Avatar" layout="fill" />
@@ -127,9 +127,19 @@ export const DoctorLayout: React.FC<MainLayoutProps> = ({ children }) => {
             </div>
           </div>
         </div>
-        <div className="w-5/6 ml-[16.67%] bg-gray-50 h-screen overflow-y-auto">
+
+        <div className="w-5/6 ml-[16.67%] bg-gray-50 h-screen sm:ml-0 sm:w-full">
           <div className="w-full bg-white shadow-md pl-5">
-            <Image src="/logo.png" alt="logo" width={250} height={100} />
+            <div className="flex sm:justify-between">
+              <div className="hamburger mt-9 mb-9 rounded pt-3 pb-3 pl-4 pr-4 bg-sky-500/100 cursor-pointer hidden sm:block">
+                <div className="line h-0.5 w-6 my-2 bg-white"></div>
+                <div className="line h-0.5 w-6 my-2 bg-white"></div>
+                <div className="line h-0.5 w-6 my-2 bg-white"></div>
+              </div>
+              <div className="logo mr-3">
+                <Image src="/logo.png" alt="logo" width={250} height={100} />
+              </div>
+            </div>
           </div>
           <div className="px-12 py-12">{children}</div>
         </div>

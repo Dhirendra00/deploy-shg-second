@@ -84,7 +84,7 @@ export const Button: React.FC<IButtonProps> = ({
           ? () => onClickFn()
           : () => (type === "open" ? setIsOpen(true) : setIsOpen(false))
       }
-      className={`w-${width}`}
+      className={`w-${width} sm:w-5/6 sm:mb-5`}
     >
       {children}
     </div>

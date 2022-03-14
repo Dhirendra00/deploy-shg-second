@@ -29,15 +29,16 @@ const HfPatientDetailTab = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const id = router.query && router.query.patientId;
-  console.log(id);
 
   useEffect(() => {
-    fetchSinglePatient(id).then((data) => {
-      console.log(data);
-      setPatient(data.data);
-      setLoading(false);
-    });
-  }, [id]);
+    if (router.asPath !== router.route) {
+      fetchSinglePatient(router.query.id).then((data) => {
+        console.log(data);
+        setPatient(data.data);
+        setLoading(false);
+      });
+    }
+  }, [router]);
 
   function closeModal() {
     setIsOpen(false);
@@ -49,7 +50,7 @@ const HfPatientDetailTab = () => {
 
   const Spinner = () => {
     return (
-      <div className="h-screen w-full flex justify-center items-center">
+      <div className="h-screen w-full flex justify-center items-center ">
         <Spin size="large" />
       </div>
     );

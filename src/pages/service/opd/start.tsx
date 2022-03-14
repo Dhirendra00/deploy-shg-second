@@ -35,8 +35,8 @@ const StartOPD = () => {
   return (
     <MainLayout>
       <div className="space-y-8">
-        <div className="flex items-center w-full justify-between">
-          <div className="flex flex-col">
+        <div className="flex items-center w-full justify-between sm:grid sm:grid-rows-1">
+          <div className="flex flex-col sm:space-y-3">
             <h1 className="text-5xl font-semibold text-gray-700">
               Welcome To OPD Service
             </h1>
@@ -45,7 +45,7 @@ const StartOPD = () => {
               patient
             </p>
           </div>
-          <div className="flex items-center space-x-4 px-6 py-3 shadow-E500 ring-1 ring-gray-600 ring-opacity-25 rounded-xl bg-white">
+          <div className=" flex items-center space-x-4 px-6 py-3 shadow-E500 ring-1 ring-gray-600 ring-opacity-25 rounded-xl bg-white sm:w-80 sm:mt-4">
             <div className="w-24 h-24 relative rounded-full overflow-hidden shadow-E400">
               <Image src="/avatar.png" alt="Avatar" layout="fill" />
             </div>
@@ -68,13 +68,13 @@ const StartOPD = () => {
           <h1 className="text-xl font-semibold text-gray-700">
             Basic Services
           </h1>
-          <div className="flex flex-wrap justify-between">
+          <div className="flex flex-wrap justify-between sm:grid sm:grid-cols-2">
             {services.map((service) => (
               <Modal key={service.title}>
                 <Modal.Button type="open">
                   <button
                     key={service.title}
-                    className="w-64 px-4 py-14 cursor-pointer flex flex-col items-center space-y-4 justify-center bg-white hover:ring-blue-500 hover:ring-2 ring-1 ring-gray-600 ring-opacity-25 rounded-lg shadow-E300 focus:shadow-E100  transition-all duration-200"
+                    className="w-64 px-4 py-14 cursor-pointer flex flex-col items-center space-y-4 justify-center bg-white hover:ring-blue-500 hover:ring-2 ring-1 ring-gray-600 ring-opacity-25 rounded-lg shadow-E300 focus:shadow-E100  transition-all duration-200 sm:w-full"
                   >
                     <div className="h-32 w-32 relative">
                       <Image src={service.image} alt="Vitals" layout="fill" />
@@ -433,7 +433,9 @@ const VitalModalContent = () => {
         //     `/service/opd/start?name=${router.query.name}&id=${router.query.id}`
         //   )
         // }
-        >Submit</Button>
+        >
+          Submit
+        </Button>
       </Form>
     </Formik>
   );

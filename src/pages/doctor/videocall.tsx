@@ -33,7 +33,7 @@ function Videocall() {
   return (
     <div>
       <div className="flex w-full min-h-screen" suppressHydrationWarning={true}>
-        <div className="fixed w-1/4 bg-white h-screen shadow-E500 z-20 flex items-start pb-4 pt-2 flex-col space-y-12">
+        <div className="fixed w-1/4 bg-white h-screen shadow-E500 z-20 flex items-start pb-4 pt-2 flex-col space-y-12 sm:-translate-x-80 sm:absolute">
           <nav className="w-full overflow-y-auto">
             <ul className="w-full px-2">
               <Link href="/doctor" passHref>
@@ -48,9 +48,19 @@ function Videocall() {
         </div>
         <div className="w-3/4 ml-[25%] bg-gray-50 h-screen">
           <div className="w-full bg-white shadow-md pl-5">
-            <Image src="/logo.png" alt="logo" width={250} height={100} />
+            <div className="flex sm:justify-between">
+              <div className="hamburger mt-9 mb-9 rounded pt-3 pb-3 pl-4 pr-4 bg-sky-500/100 cursor-pointer hidden sm:block">
+                <div className="line h-0.5 w-6 my-2 bg-white"></div>
+                <div className="line h-0.5 w-6 my-2 bg-white"></div>
+                <div className="line h-0.5 w-6 my-2 bg-white"></div>
+              </div>
+              <div className="logo mr-3">
+                <Image src="/logo.png" alt="logo" width={250} height={100} />
+              </div>
+            </div>
+            {/* <Image src="/logo.png" alt="logo" width={250} height={100} /> */}
           </div>
-          <div className="px-12 py-12">
+          <div className="px-12 py-12 sm:pl-7 sm:pr-7">
             <div className="App">
               <header className="header">
                 {/* <img

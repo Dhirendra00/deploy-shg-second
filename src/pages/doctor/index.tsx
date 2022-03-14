@@ -77,17 +77,18 @@ const DoctorDashboard: React.FC = () => {
         <hr></hr>
         <div className=" px-2 py-2  grid grid-cols-4 gap-2 grid-rows-3 ">
           {patients &&
-            patients.slice(0, 12).map((patient) => (
-              <Patient
-                key={patient.id}
-                name={patient.name}
-                gender={patient.gender}
-                service={patient.Service}
-                status={true}
-                id={patient.patient_id}
-                // address={patient.patient_address}
-              />
-            ))}
+            patients
+              .slice(0, 12)
+              .map((patient) => (
+                <Patient
+                  key={patient.id}
+                  name={patient.name}
+                  gender={patient.gender}
+                  service={patient.Service}
+                  status={true}
+                  id={patient.patient_id}
+                />
+              ))}
         </div>
       </div>
     </DoctorLayout>
